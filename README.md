@@ -1,5 +1,5 @@
-phpspec-reference
-=================
+PHPSpec reference guide
+=======================
 
 * [Mocks](#mocks)
 
