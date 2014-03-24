@@ -7,7 +7,7 @@ A guide containing phpspec snippets for different use cases
 
 ## Mocks
 
-### Injecting mocks
+### Injecting mocks in constructor
 
 Inject a mock in the constructor for use in your specs:
 
@@ -27,8 +27,6 @@ function let($dependency)
 }
 
 ```
-
-### Using mocks
 
 Pass in the spec the same mock variable name:
 
