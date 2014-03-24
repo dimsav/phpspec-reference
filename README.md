@@ -7,7 +7,9 @@ A guide containing phpspec snippets for different use cases
 
 ## Mocks
 
-### Injecting mocks in constructor
+### Creating mocks
+
+#### Injecting mocks in constructor
 
 Inject a mock in the constructor for use in your specs:
 
@@ -37,7 +39,7 @@ function it_sends_the_message($dependency)
 }
 ```
 
-### Injecting mocks in spec
+#### Injecting mocks in spec
 
 ```php
 function it_sends_the_message(Acme\Dependency $dependency)
@@ -46,4 +48,30 @@ function it_sends_the_message(Acme\Dependency $dependency)
 }
 
 ```
+
+### Using mocks
+
+#### Returning values from mock methods
+
+Imagine you have a Messenger class, containing a `send(Message $message)` method. Let's spec that:
+
+```php
+function it_sends_the_message(Acme\Message $message)
+{
+    $message->getContents()->willReturn('abc');
+    $this->send($message);
+}
+```
+
+#### Specify that a mock method should be called
+
+```php
+function it_sends_the_message(Acme\Message $message)
+{
+    $message->getContents()->shouldBeCalled()->willReturn('abc');
+    $this->send($message);
+}
+```
+
+
 
