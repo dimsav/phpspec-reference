@@ -25,7 +25,6 @@ function let($dependency)
     $dependency->beADoubleOf('Acme\Dependency');
     $this->beConstructedWith($dependency)
 }
-
 ```
 
 Pass in the spec the same mock variable name:
@@ -36,5 +35,15 @@ function it_sends_the_message($dependency)
 {
     // $depency is now the mock we created in let()
 }
+```
+
+### Injecting mocks in spec
+
+```php
+function it_sends_the_message(Acme\Dependency $dependency)
+{
+    // $depency is now a new mock of Acme\Dependency
+}
 
 ```
+
