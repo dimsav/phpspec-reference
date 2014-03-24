@@ -14,7 +14,7 @@ A guide containing phpspec snippets for different use cases
 Inject a mock in the constructor for use in your specs:
 
 ```php
-// spec\Acme\HandlerSpec.php
+// spec/Acme/HandlerSpec.php
 
 function let(Acme\Dependency $dependency)
 {
