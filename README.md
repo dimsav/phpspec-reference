@@ -1,6 +1,8 @@
 phpspec-reference
 =================
 
+* [Mocks](#mocks)
+
 A guide containing phpspec use cases
 
 ## Mocks
