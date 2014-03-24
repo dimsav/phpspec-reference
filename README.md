@@ -53,7 +53,7 @@ function it_sends_the_message(Acme\Dependency $dependency)
 
 #### Returning values from mock methods
 
-Imagine you have a Messenger class, containing a `send(Message $message)` method. Let's spec that:
+Imagine you have a Messenger class, containing a `send(Message $message)` method. While we run `send($message)` we want to make sure $message will return 'abc' when executed.
 
 ```php
 function it_sends_the_message(Acme\Message $message)
@@ -64,6 +64,8 @@ function it_sends_the_message(Acme\Message $message)
 ```
 
 #### Specify that a mock method should be called
+
+Usually we want to make sure that a mock method is executed. We do that with `shouldBeCalled()`.
 
 ```php
 function it_sends_the_message(Acme\Message $message)
