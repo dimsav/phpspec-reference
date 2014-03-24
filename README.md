@@ -36,8 +36,7 @@ Pass in the spec the same mock variable name:
 // Our spec
 function it_sends_the_message($dependency)
 {
-    $dependency->send()->shouldBeCalled();
-    $this->someMethod();
+    // $depency is now the mock we created in let()
 }
 
 ```
