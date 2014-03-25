@@ -76,4 +76,7 @@ function it_sends_the_message(Acme\Message $message)
 ```
 
 
+## Sources
 
+* https://github.com/phpspec/phpspec-docs/blob/master/en/writing-specs.rst
+* http://www.slideshare.net/marcello.duarte/phpspec-bdd-for-php
