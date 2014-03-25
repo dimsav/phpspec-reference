@@ -4,6 +4,7 @@ PHPSpec reference guide
 A guide containing phpspec snippets for different use cases
 
 * [Mocks](#mocks)
+* [Exceptions](#exceptions)
 
 ## Mocks
 
@@ -75,8 +76,46 @@ function it_sends_the_message(Acme\Message $message)
 }
 ```
 
+## Exceptions
+
+### Throw exception
+
+Expect an `InvalidArgumentException` to be thrown when we call `send('bad')`:
+
+```php
+function it_throws_exception_during_send(Acme\Message $message)
+{
+    $this->shouldThrow('\InvalidArgumentException')->duringSend('bad');
+}
+```
+
+### Throw exception with message
+
+Expect an `InvalidArgumentException` with message "Wrong argument" to be thrown when we call `send('bad')`:
+
+```php
+function it_throws_exception_during_send(Acme\Message $message)
+{
+    $exception = new InvalidArgumentException('Wrong argument');
+
+    $this->shouldThrow($exception)->duringSend('bad');
+}
+```
+
+### Throw exception in constructor
+
+Expect an `InvalidArgumentException` to be thrown when we call the constructor `__construct('bad1, 'bad2')`:
+
+```php
+function it_throws_exception_during_constructor(Acme\Message $message)
+{
+    $this->shouldThrow(new \InvalidArgumentException)->during('__construct', array('bad1', 'bad2'));
+}
+```
+
 
 ## Sources
 
 * https://github.com/phpspec/phpspec-docs/blob/master/en/writing-specs.rst
 * http://www.slideshare.net/marcello.duarte/phpspec-bdd-for-php
+* https://github.com/yvoyer/phpspec-cheat-sheet
