@@ -80,7 +80,7 @@ function it_sends_the_message(Acme\Message $message)
 
 ### Throw exception
 
-Expect an `InvalidArgumentException` to be thrown when we call `send('bad')`:
+Expect an `InvalidArgumentException` to be thrown when we call "send('bad')". Passing the exception type as string prevents the message validation.
 
 ```php
 function it_throws_exception_during_send(Acme\Message $message)
@@ -104,7 +104,7 @@ function it_throws_exception_during_send(Acme\Message $message)
 
 ### Throw exception in constructor
 
-Expect an `InvalidArgumentException` to be thrown when we call the constructor `__construct('bad1, 'bad2')`:
+Expect an `InvalidArgumentException` to be thrown when we call the constructor `__construct('bad1, 'bad2')`. The exception is passed as instance without message. Therefore we expect no message when the exeption is thrown.
 
 ```php
 function it_throws_exception_during_constructor(Acme\Message $message)
