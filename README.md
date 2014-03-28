@@ -66,7 +66,6 @@ function it_sends_the_message(Acme\Dependency $dependency)
 {
     // $depency is now a new mock of Acme\Dependency
 }
-
 ```
 
 ### Using mocks
@@ -173,6 +172,39 @@ $this->method()->shouldHaveType('\Full\Class\Name');
 $this->method()->shouldReturnAnInstanceOf('\Full\Class\Name');
 $this->method()->shouldBeAnInstance('\Full\Class\Name');
 $this->method()->shouldImplement('\Full\Class\Name');
+```
+
+### Count
+
+You can use `shouldHaveCount()` on a method returning an `array` or an instance of `\Countable`.
+
+```php
+$this->getArray()->shouldHaveCount(2)
+$this->getCollection()->shouldHaveCount(2)
+```
+
+```php
+public function getArray() {
+    return array(1, 2)
+}
+
+public function getCollection() {
+    return $this->users;
+}
+```
+
+You can also use `shouldHaveCount()` on `$this`, if it is an instance of `\Countable`.
+
+```php
+
+$this->shouldHaveCount(10);
+
+class UsersCollection implements \Countable {
+
+    public function count() {
+        return count($this->users);
+    }
+}
 ```
 
 ## Dynamic matching types
