@@ -133,6 +133,23 @@ function it_throws_exception_during_constructor(Acme\Message $message)
 
 ## Matching types
 
+### Identical
+
+```php
+$this->method()->shouldBe($result);
+
+// Alternative syntax
+$this->method()->shouldReturn($result);
+$this->method()->shouldEqual($result);
+$this->method()->shouldBeEqualTo($result);
+```
+
+### Equal
+
+```php
+$this->method()->shouldBeLike($result)
+```
+
 ### Data types
 
 Expect the result of a method has a specific data type.
@@ -175,7 +192,6 @@ function getMatchers()
         }
     );
 }
-
 ```
 
 #### Using getMatchers()
