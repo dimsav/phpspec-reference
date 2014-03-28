@@ -116,7 +116,9 @@ function it_throws_exception_during_constructor(Acme\Message $message)
 
 ## Matching types
 
-Expect the result of a method has a specific type.
+### Data types
+
+Expect the result of a method has a specific data type.
 
 ```php
 $this->method()->shouldBeBool();
@@ -127,6 +129,16 @@ $this->method()->shouldBeDecimal();
 $this->method()->shouldBeArray();
 ```
 
+### Objects
+
+All the following syntaxes expect that method() returns an instance of the given class.
+
+```php
+$this->method()->shouldHaveType('\Full\Class\Name');
+$this->method()->shouldReturnAnInstanceOf('\Full\Class\Name');
+$this->method()->shouldBeAnInstance('\Full\Class\Name');
+$this->method()->shouldImplement('\Full\Class\Name');
+```
 
 
 
