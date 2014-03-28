@@ -140,7 +140,34 @@ $this->method()->shouldBeAnInstance('\Full\Class\Name');
 $this->method()->shouldImplement('\Full\Class\Name');
 ```
 
+### Custom types
 
+Custom types give us the possibility to expect something using a closure. To do that we have to define a "getMatchers()" method in our spec class.
+
+#### getMatchers()
+
+getMatchers() should return an array with keys describing the expectations and values the closures containing the logic of the expectations.
+
+```php
+
+function getMatchers()
+{
+    return array(
+        'haveLength' => function($string) {
+            return strlen($string);
+        }
+    );
+}
+
+```
+
+#### Using getMatchers()
+
+To use the above expectation we use the method `should` + `{getMatchers key}`.
+
+```php
+$this->method()->shouldHaveLenth(12);
+```
 
 ## Sources
 
