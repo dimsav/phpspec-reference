@@ -3,9 +3,26 @@ PHPSpec reference guide
 
 A guide containing phpspec snippets for different use cases
 
+* [Commands](#commands)
 * [Mocks](#mocks)
 * [Exceptions](#exceptions)
 * [Matching types](#matching-types)
+
+## Commands
+
+### Describe
+
+`phpspec describe Namespaced/Class/Name`
+
+Describe creates the spec file for the class you want to specify.
+
+### Run
+
+`phpspec run`
+
+Run executes the the specs and ends with a nice output.
+
+![PhpSpec output](https://i.cloudup.com/EIw8gDuYrr-2000x2000.png)
 
 ## Mocks
 
