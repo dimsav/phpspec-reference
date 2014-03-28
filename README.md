@@ -7,6 +7,7 @@ A guide containing phpspec snippets for different use cases
 * [Mocks](#mocks)
 * [Exceptions](#exceptions)
 * [Matching types](#matching-types)
+* [Dynamic matching types](#dynamic-matching-types)
 
 ## Commands
 
@@ -172,6 +173,46 @@ $this->method()->shouldHaveType('\Full\Class\Name');
 $this->method()->shouldReturnAnInstanceOf('\Full\Class\Name');
 $this->method()->shouldBeAnInstance('\Full\Class\Name');
 $this->method()->shouldImplement('\Full\Class\Name');
+```
+
+## Dynamic matching types
+
+### Boolean shouldBe*
+
+To use the shouldBe* matching, the class should have a public method starting with "is".
+
+```php
+// User.php
+public function isActive() {
+    return (bool) $this->isActive;
+}
+```
+
+```php
+// expect isActive returns true
+$this->shouldBeActive();
+
+// expect isActive returns false
+$this->shouldNotBeActive();
+```
+
+### Boolean shouldHave*
+
+To use the shouldHave* matching, the class should have a public method starting with "has".
+
+```php
+// User.php
+public function hasProfile() {
+    return (bool) $this->hasProfile;
+}
+```
+
+```php
+// expect hasProfile returns true
+$this->shouldHaveProfile();
+
+// expect hasProfile returns false
+$this->shouldNotHaveProfile();
 ```
 
 ### Custom types
