@@ -5,6 +5,7 @@ A guide containing phpspec snippets for different use cases
 
 * [Mocks](#mocks)
 * [Exceptions](#exceptions)
+* [Matching types](#matching-types)
 
 ## Mocks
 
@@ -112,6 +113,21 @@ function it_throws_exception_during_constructor(Acme\Message $message)
     $this->shouldThrow(new \InvalidArgumentException)->during('__construct', array('bad1', 'bad2'));
 }
 ```
+
+## Matching types
+
+Expect the result of a method has a specific type.
+
+```php
+$this->method()->shouldBeBool();
+$this->method()->shouldBeObject();
+$this->method()->shouldBeString();
+$this->method()->shouldBeInteger();
+$this->method()->shouldBeDecimal();
+$this->method()->shouldBeArray();
+```
+
+
 
 
 ## Sources
