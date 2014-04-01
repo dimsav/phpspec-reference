@@ -9,6 +9,10 @@ A guide containing phpspec snippets for different use cases
 * [Matching types](#matching-types)
 * [Dynamic matching types](#dynamic-matching-types)
 
+## Installation
+
+Install with composer using this [composer.json](https://gist.github.com/dimsav/9686418).
+
 ## Commands
 
 ### Describe
