@@ -257,15 +257,15 @@ Custom types give us the possibility to expect something using a closure. To do 
 
 #### getMatchers()
 
-getMatchers() should return an array with keys describing the expectations and values the closures containing the logic of the expectations.
+getMatchers() should return an array with keys describing the expectations and values the closures containing the logic of the expectations. The first parameter in the closure is the output of the executed method.
 
 ```php
 
 function getMatchers()
 {
     return array(
-        'haveLength' => function($string) {
-            return strlen($string);
+        'haveLength' => function($result, $count) {
+            return strlen($result) == $count;
         }
     );
 }
