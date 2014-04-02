@@ -8,6 +8,7 @@ A guide containing phpspec snippets for different use cases
 * [Exceptions](#exceptions)
 * [Matching types](#matching-types)
 * [Dynamic matching types](#dynamic-matching-types)
+* [Plugins](#plugins)
 
 ## Installation
 
@@ -278,6 +279,10 @@ To use the above expectation we use the method `should` + `{getMatchers key}`.
 ```php
 $this->method()->shouldHaveLenth(12);
 ```
+
+## Plugins
+
+* [Code coverage](https://github.com/dimsav/phpspec-reference/wiki/PhpSpec:-Code-coverage-plugin)
 
 ## Sources
 
