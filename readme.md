@@ -289,9 +289,9 @@ $this->method()->shouldHaveLenth(12);
 
 Custom templates can be used when phpspec generates php code. There are three template types, each of which, requires a different file name:
 
-* Specs: `specification.tpl`
-* Classes: `class.tpl`
-* Methods: `method.tpl`
+* Specs: [specification.tpl](#specification-template)
+* Classes: [class.tpl](#class-template)
+* Methods: [method.tpl](#method-template)
 
 Phpspec will look for template files in these locations with the following order:
 
@@ -302,7 +302,7 @@ To see the available template parameters visit the [parameters chapter](http://w
 
 #### Specification template
 
-```php
+```
 <?php namespace %namespace%;
 
 use PhpSpec\ObjectBehavior,
@@ -320,7 +320,7 @@ class %name% extends ObjectBehavior
 
 #### Class template
 
-```php
+```
 <?php namespace %namespace%;
 
 class %name%
@@ -331,7 +331,7 @@ class %name%
 
 #### Method template
 
-```php
+```
 public function %name%(%arguments%)
 {
     
