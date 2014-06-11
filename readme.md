@@ -9,6 +9,7 @@ A guide containing phpspec snippets for different use cases
 * [Matching types](#matching-types)
 * [Dynamic matching types](#dynamic-matching-types)
 * [Plugins](#plugins)
+* [Templates](#templates)
 
 ## Installation
 
@@ -283,6 +284,21 @@ $this->method()->shouldHaveLenth(12);
 ## Plugins
 
 * [Code coverage](https://github.com/dimsav/phpspec-reference/wiki/PhpSpec:-Code-coverage-plugin)
+
+## Templates
+
+Custom templates can be used when phpspec generates php code. There are three template types, each of which, requires a different file name:
+
+* Specs: `specification.tpl`
+* Classes: `class.tpl`
+* Methods: `method.tpl`
+
+Phpspec will look for template files in these locations with the following order:
+
+1. `{project_directory}/.phpspec/`
+2. `{user_home_directory}/.phpspec/`
+
+To see the available template parameters visit the [parameters chapter](http://www.phpspec.net/cookbook/templates.html#parameters) in the docs.
 
 ## Sources
 
