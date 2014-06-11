@@ -300,6 +300,44 @@ Phpspec will look for template files in these locations with the following order
 
 To see the available template parameters visit the [parameters chapter](http://www.phpspec.net/cookbook/templates.html#parameters) in the docs.
 
+#### Specification template
+
+```php
+<?php namespace %namespace%;
+
+use PhpSpec\ObjectBehavior,
+    Prophecy\Argument;
+
+class %name% extends ObjectBehavior
+{
+    function let()
+    {
+        
+    }
+
+}
+```
+
+#### Class template
+
+```php
+<?php namespace %namespace%;
+
+class %name%
+{
+    
+}
+```
+
+#### Method template
+
+```php
+public function %name%(%arguments%)
+{
+    
+}
+```
+
 ## Sources
 
 * https://github.com/phpspec/phpspec-docs/blob/master/en/writing-specs.rst
