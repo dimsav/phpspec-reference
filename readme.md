@@ -32,7 +32,11 @@ Or by adding the depencency manually to your composer.json file:
 Optionally, add the following aliases to your system:
 
 ```bash
-# PHPSpec
+# PHPSpec Command
+
+alias phpspec='vendor/bin/phpspec'
+
+# PHPSpec Shortcuts
 
 alias spec='vendor/bin/phpspec'
 alias specr='vendor/bin/phpspec run'
