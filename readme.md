@@ -13,7 +13,32 @@ A guide containing phpspec snippets for different use cases
 
 ## Installation
 
-Install with composer using this [composer.json](https://gist.github.com/dimsav/9686418).
+Install with composer using this composer command:
+
+```
+composer require phpspec/phpspec:2.*@dev --dev
+```
+
+Or by adding the depencency manually to your composer.json file:
+
+```json
+{
+    "require-dev": {
+        "phpspec/phpspec": "2.0.*@dev"
+    }
+}
+```
+
+Optionally, add the following aliases to your system:
+
+```bash
+# PHPSpec
+
+alias spec='vendor/bin/phpspec'
+alias specr='vendor/bin/phpspec run'
+alias specd='vendor/bin/phpspec describe'
+```
+
 
 ## Commands
 
