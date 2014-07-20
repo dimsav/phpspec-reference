@@ -205,7 +205,7 @@ All the following syntaxes expect that method() returns an instance of the given
 ```php
 $this->method()->shouldHaveType('\Full\Class\Name');
 $this->method()->shouldReturnAnInstanceOf('\Full\Class\Name');
-$this->method()->shouldBeAnInstance('\Full\Class\Name');
+$this->method()->shouldBeAnInstanceOf('\Full\Class\Name');
 $this->method()->shouldImplement('\Full\Class\Name');
 ```
 
