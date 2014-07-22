@@ -10,6 +10,7 @@ A guide containing phpspec snippets for different use cases
 * [Dynamic matching types](#dynamic-matching-types)
 * [Plugins](#plugins)
 * [Templates](#templates)
+* [Tips](#tips)
 
 ## Installation
 
@@ -365,6 +366,44 @@ public function %name%(%arguments%)
 {
     
 }
+```
+
+## Tips
+
+### PhpStorm
+
+If you use PhpStorm, there is one incompatibility in the docs of `beConstructedWith()`, when only one parameter is given.
+
+> Required parameter $ missing
+
+To fix that, I edit the docblock of the ObjectBehavior.php file in the vendor directory.
+
+```php
+/*
+ * @method void beConstructedWith($constructorArguments,...)
+ */
+
+// change to 
+
+/*
+ * @method void beConstructedWith($constructorArguments)
+ */
+```
+
+### Expected ... (?)
+
+When we expect some string to be returned, we need more details about the differences of the output and the expected string.
+
+> expected "<link rel='canonical' hre"..., but got "<link rel='canonical' hre"....
+
+I don't find this message very helpful. To fix that, I edit the method `StringPresenter::presentValue()` as follows:
+
+```php
+// Replace this
+if (25 > strlen($value) && false === strpos($value, "\n"))
+
+// With this
+if (true || 25 > strlen($value) && false === strpos($value, "\n"))
 ```
 
 ## Sources
