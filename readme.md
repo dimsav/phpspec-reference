@@ -124,7 +124,7 @@ Now imagine you need to call a method several times and have a diferent value ea
 function it_gets_three_random_numbers(Acme\RandomGenerator $rand)
 {
     $rand->generate()->willReturn(123, 432, 874);
-    $this->getNumbers()->shouldReturn([123, 432, 874]);
+    $this->getNumbers($rand, 3)->shouldReturn([123, 432, 874]);
 }
 ```
 
