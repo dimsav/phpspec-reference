@@ -118,6 +118,16 @@ function it_sends_the_message(Acme\Message $message)
 }
 ```
 
+Now imagine you need to call a method several times and have a diferent value each time.
+
+```php
+function it_gets_three_random_numbers(Acme\RandomGenerator $rand)
+{
+    $rand->generate()->willReturn(123, 432, 874);
+    $this->getNumbers()->shouldReturn([123, 432, 874]);
+}
+```
+
 #### Specify that a mock method should be called
 
 Usually we want to make sure that a mock method is executed. We do that with `shouldBeCalled()`.
