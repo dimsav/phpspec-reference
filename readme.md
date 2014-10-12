@@ -74,14 +74,14 @@ Inject a mock in the constructor for use in your specs:
 
 function let(Acme\Dependency $dependency)
 {
-    $this->beConstructedWith($dependency)
+    $this->beConstructedWith($dependency);
 }
 
 // Alternative syntax
 function let($dependency)
 {
     $dependency->beADoubleOf('Acme\Dependency');
-    $this->beConstructedWith($dependency)
+    $this->beConstructedWith($dependency);
 }
 ```
 
