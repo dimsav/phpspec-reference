@@ -404,16 +404,57 @@ To fix that, I edit the docblock of the ObjectBehavior.php file in the vendor di
 
 When we expect some string to be returned, we need more details about the differences of the output and the expected string.
 
-> expected "<link rel='canonical' hre"..., but got "<link rel='canonical' hre"....
+> expected "some long string that is ...", but got "some different long strin...".
 
-I don't find this message very helpful. To fix that, I edit the method `StringPresenter::presentValue()` as follows:
+This message isn't very helpful.  To get the full difference in the string, plus lots of other information, pass the `-v` option:
 
-```php
-// Replace this
-if (25 > strlen($value) && false === strpos($value, "\n"))
+`phpspec run -v`
 
-// With this
-if (true || 25 > strlen($value) && false === strpos($value, "\n"))
+will now output something like
+
+```
+  25  ✘ should match strings
+        expected "some long string that is ...", but got "some different long strin...".
+
+        @@ -1,1 +1,1 @@
+        -some long string that is really long.
+        +some different long string that is really long.
+
+
+          25     function it_should_match_strings()
+          26     {
+          27         $this->foo()->shouldReturn('some long string that is really long.');
+          28     }
+          29
+
+
+         0 vendor/phpspec/phpspec/src/PhpSpec/Matcher/IdentityMatcher.php:78
+           throw new PhpSpec\Exception\Example\NotEqualException("Expected "some lon...")
+         1 [internal]
+           Spec\Foo\StringSpec->it_should_match()
+```
+
+This also works with objects:
+
+```
+@@ -1,4 +1,4 @@
+-stdClass Object &000000000f3eb7a000000000285a17d7 (
+-    'foo' => 'bar'
++stdClass Object &000000000f3eb78e00000000285a17d7 (
++    'bax' => 'bar'
+     'bar' => 'foo'
+ )
+ ```
+ 
+ and arrays:
+ 
+ ```
+ @@ -1,4 +1,4 @@
+   [
+     far => ""foo"...",
+-    boo => ""baz"...",
++    boo => ""bar"...",
+   ]
 ```
 
 ## Sources
