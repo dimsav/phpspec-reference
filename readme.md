@@ -57,7 +57,7 @@ Describe creates the spec file for the class you want to specify.
 
 `phpspec run`
 
-Run executes the the specs and ends with a nice output.
+Run executes the specs and ends with a nice output.
 
 ![PhpSpec output](https://i.cloudup.com/EIw8gDuYrr-2000x2000.png)
 
