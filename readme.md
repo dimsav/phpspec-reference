@@ -91,7 +91,7 @@ Pass in the spec the same mock variable name:
 // Our spec
 function it_sends_the_message($dependency)
 {
-    // $depency is now the mock we created in let()
+    // $dependency is now the mock we created in let()
 }
 ```
 
@@ -100,7 +100,7 @@ function it_sends_the_message($dependency)
 ```php
 function it_sends_the_message(Acme\Dependency $dependency)
 {
-    // $depency is now a new mock of Acme\Dependency
+    // $dependency is now a new mock of Acme\Dependency
 }
 ```
 
