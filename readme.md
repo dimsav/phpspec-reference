@@ -318,7 +318,7 @@ function getMatchers()
 To use the above expectation we use the method `should` + `{getMatchers key}`.
 
 ```php
-$this->method()->shouldHaveLenth(12);
+$this->method()->shouldHaveLength(12);
 ```
 
 ## Plugins
